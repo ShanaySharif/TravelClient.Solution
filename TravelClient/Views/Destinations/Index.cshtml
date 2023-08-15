@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Destinations";
+}
+
+<h1>Destination:</h1>
+
+<ol>
+@foreach (Destination destination in Model)
+{
+  <li><strong>@destination.CityName</strong> -  @destination.CountryName | <a href="/Destinations/Details/@(destination.DestinationId)">View Details</a></li>
+}
+</ol>
+

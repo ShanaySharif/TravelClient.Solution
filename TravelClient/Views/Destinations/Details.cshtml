@@ -10,7 +10,6 @@
 
 <p>Rating: @Model.Rating</p>
 
-
-
-
-@Html.ActionLink("Return to all destinations", "Index")
+<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.DestinationId })</p>
+<p>@Html.ActionLink("Delete destination", "Delete", new { id = @Model.DestinationId })</p>
+<p>@Html.ActionLink("Return to all destinations", "Index")</p>

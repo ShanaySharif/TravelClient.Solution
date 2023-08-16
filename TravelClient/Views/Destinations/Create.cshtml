@@ -1,0 +1,27 @@
+@{
+  ViewData["Title"] = "Create Destination";
+}
+
+@model TravelClient.Models.Destination
+
+<h4>Add a new destination</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.CityName)
+  @Html.TextBoxFor(model => model.CityName)
+  <br>
+  @Html.LabelFor(model => model.CountryName)
+  @Html.TextBoxFor(model => model.CountryName)
+  <br>
+  @Html.LabelFor(model => model.Review)
+  @Html.TextBoxFor(model => model.Review)
+  <br>
+  @Html.LabelFor(model => model.Rating)
+  @Html.TextBoxFor(model => model.Rating)
+  <br>
+  <input type="submit" value="Add new destination" class="btn btn-primary"/>
+}
+
+<br>
+<p>@Html.ActionLink("Back to all destinations", "Index")</p>

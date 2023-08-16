@@ -43,7 +43,7 @@ namespace TravelClient.Models
     public static void Put(Destination destination)
     {
       string jsonDestination = JsonConvert.SerializeObject(destination);
-      ApiHelper.Put(destination.destinationId, jsonDestination);
+      ApiHelper.Put(destination.DestinationId, jsonDestination);
     }
     public static void Delete(int id)
     {

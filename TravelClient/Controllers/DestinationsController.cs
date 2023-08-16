@@ -11,7 +11,23 @@ public class DestinationsController : Controller
     List<Destination> destinations = Destination.GetDestinations();
     return View(destinations);
   }
-   public IActionResult Details(int id)
+
+
+public IActionResult Get(string cityName, string countryName, int rating)
+    {
+        List<Destination> filteredDestinations = Destination.GetDestinations()
+            .Where(d =>
+                (d.CityName.Contains(cityName)) 
+                // && (string.IsNullOrEmpty(countryName) || d.CountryName.Contains(countryName)) &&
+                // (rating <= 0 || d.Rating == rating)
+                )
+            .ToList();
+
+        ViewBag.cityName = cityName;
+        return View(filteredDestinations);
+    }
+
+  public IActionResult Details(int id)
   {
     Destination destination = Destination.GetDetails(id);
     return View(destination);
@@ -52,3 +68,4 @@ public class DestinationsController : Controller
     return RedirectToAction("Index");
   }
 }
+

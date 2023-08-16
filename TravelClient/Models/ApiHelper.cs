@@ -12,6 +12,13 @@ namespace TravelClient.Models
       RestResponse response = await client.GetAsync(request);
       return response.Content;
     }
+    public static async Task<string> GetCity(string cityName)
+    {
+      RestClient client = new RestClient("https://localhost:5001/");
+      RestRequest request = new RestRequest($"api/destinations?cityName={cityName}", Method.Get);
+      RestResponse response = await client.GetAsync(request);
+      return response.Content;
+    }
     public static async Task<string> Get(int id)
     {
       RestClient client = new RestClient("http://localhost:5000/");

@@ -6,3 +6,25 @@
   <h1 class="display-4"> Let's Travel !</h1>
   <p>Get to know a few of <a href="/destinations">our destinations</a> </p>
 </div>
+
+<div class="text-center">
+    <form method="get" asp-action="Get" asp-controller="Destinations">
+        <p>
+            <label for="cityName">City:</label>
+            <input type="text" id="cityName" name="cityName" />
+
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </p>
+    </form>
+</div>
+
+<!-- <div class="text-center">
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Search city or country by name" value="@ViewData["GetDestinationDetails"]" name="DestinationSearch"/>
+        <input type="submit" value="Search" class="btn btn-primary"/> |
+        <a asp-action="Index">See all destinations</a>
+    </p>
+</form>
+</div> -->
+

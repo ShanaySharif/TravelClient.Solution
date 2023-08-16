@@ -1,0 +1,21 @@
+@model List<TravelClient.Models.Destination>
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+
+<h1>This is your destination:</h1>
+@ViewBag.cityName
+
+<ul>
+    @foreach (Destination destination in Model)
+            
+    {
+        <ul>
+            <li>City: @destination.CityName</li>
+            <li>Country: @destination.CountryName</li>
+            <li>Rating: @destination.Rating</li>
+        </ul>
+    }
+   
